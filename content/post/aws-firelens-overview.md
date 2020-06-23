@@ -2,6 +2,8 @@
 title: aws-firelens-overview
 description: An overview of AWS Firelens
 tags: ["aws", "firelens"]
+date: 2020-06-22
+
 ---
 
 # AWS Firelens Overview

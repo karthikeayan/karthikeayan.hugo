@@ -2,6 +2,8 @@
 title: netflix-eureka-on-aws-fargate
 description: Deploying Netflix Eureka on AWS Fargate
 tags: ["aws", "fargate", "service-discovery", "netflix-eureka"]
+date: 2020-06-22
+publishdate: 2020-06-22
 ---
 
 # Configuration for deploying Netflix Eureka in AWS Fargate
@@ -13,7 +15,7 @@ Service Discovery service from Netflix.
 Service Discovery can be achieved with [ECS Service Discovery](https://aws.amazon.com/blogs/aws/amazon-ecs-service-discovery/) feature. However I have asked to work on resolve the issues while deploying Eureka into AWS Fargate. I ran into multiple challenges, sharing the knowledge what I gained here.
 
 ## Architecture
-![Architecture](/static/images/netflix-eureka-on-fargate.png)
+![Architecture](/images/hugo-netflix-eureka-on-aws-fargate.svg)
 
 ## Steps
 
