@@ -17,12 +17,13 @@
         {{ range $related }} {{ partial "list-item" . }} {{ end }}
     {{ end }}
 
-    <!-- Disquis comments -->
+    <!-- Disquis comments 
     {{ if and .Site.DisqusShortname (not .Params.disableComments) }}
         <h4 class="page-header">Comments</h4>
         {{ template "_internal/disqus.html" . }}
     {{ end }}
-
+    -->
+    
 </main>
 
 {{ partial "footer" . }}
