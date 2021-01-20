@@ -28,3 +28,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          external_repository: karthikeayan/karthikeayan.github.io
+          publish_branch: master
+          # Without `keep_files` the `CNAME` file in the target repo will get removed
+          # and the custom domain configured for GitHub pages will get dropped every 
+          # time the action runs…
+          keep_files: true
