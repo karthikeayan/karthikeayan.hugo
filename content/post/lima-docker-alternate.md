@@ -66,5 +66,5 @@ Then you can start using nerdctl, like below:
 lima nerdctl run -d --name nginx -p 127.0.0.1:8080:80 nginx:alpine
 ```
 
-Since I get used to it, I added an alias in my ~/.zshrc file pointing "docker" to "lima nerdctl" 
+Till I get used to the new command, I thought, I will use an alias in my ~/.zshrc file pointing "docker" to "lima nerdctl" 
 :smile: :smile: :smile:
