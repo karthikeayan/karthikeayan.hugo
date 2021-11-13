@@ -15,7 +15,7 @@ It remains free for small businesses (fewer than 250 employees AND less than $10
 ```
 Extracted from, https://www.docker.com/products/docker-desktop
 
-Many of us using Docker Desktop in day to day activities are part of large businesses. So I tried searching for an alternate for Docker and found this.
+Many of us using Docker Desktop in day to day activities are part of large businesses. So I tried searching for an alternate and found this.
 ```
 https://github.com/containerd/nerdctl
 ```
