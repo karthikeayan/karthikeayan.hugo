@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "IT Technical Blogs"
 theme = "minimal"
 disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = ""
+googleAnalytics = "UA-170492285-1"
 
 [params]
     author = "Karthikeyan Sundararajan"
