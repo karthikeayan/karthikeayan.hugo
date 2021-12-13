@@ -1,6 +1,6 @@
 baseURL = "https://karthikeayan.github.io/"
 languageCode = "en-us"
-title = "IT Technical Blogs"
+title = "Just a blog!"
 theme = "minimal"
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = "UA-170492285-1"
