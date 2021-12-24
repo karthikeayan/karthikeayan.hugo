@@ -14,13 +14,13 @@ Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH in
 
 Also ECS was lacking a command line option just like,
 
-```
+```bash
 kubectl exec
 ```
 
 On March 2021, AWS launched a feature which is similar to "kubectl exec" to obtain a shell access of a container running on ECS Fargate.
 
-https://aws.amazon.com/blogs/containers/new-using-amazon-ecs-exec-access-your-containers-fargate-ec2/
+<https://aws.amazon.com/blogs/containers/new-using-amazon-ecs-exec-access-your-containers-fargate-ec2/>
 
 This helped me a lot to troubleshoot issues.
 
@@ -28,7 +28,7 @@ Since I have to login into lots of different containers running on different ECS
 
 So, I just wrote a very simple shell script which can help me. Here is the script.
 
-```
+```bash
 #!/usr/local/bin/bash
 
 echo Enter Cluster Name:
