@@ -32,13 +32,13 @@ brew install azure-cli
 
 Getting authentication and authorization configuration was faily simple, below command will redirect to your browser and use SSO to login into Azure.
 
-```bash
+```
 az login --allow-no-subscriptions
 ```
 
 Once I logged in with the CLI, I used below script to check if the user is still present in the Azure AD or not. This will print the users whose details are not present in Azure AD.
 
-```bash
+```
 #!/usr/local/bin/bash
 
 while IFS= read -r line; do

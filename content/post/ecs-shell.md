@@ -14,7 +14,7 @@ Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH in
 
 Also ECS was lacking a command line option just like,
 
-```bash
+```
 kubectl exec
 ```
 
@@ -28,7 +28,7 @@ Since I have to login into lots of different containers running on different ECS
 
 So, I just wrote a very simple shell script which can help me. Here is the script.
 
-```bash
+```
 #!/usr/local/bin/bash
 
 echo Enter Cluster Name:
