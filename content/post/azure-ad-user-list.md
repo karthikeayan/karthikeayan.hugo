@@ -26,7 +26,7 @@ I then started thinking, if it is possible with Web UI, there should be a CLI fo
 
 So, I have to install Azure CLI,
 
-```bash
+```
 brew install azure-cli
 ```
 
