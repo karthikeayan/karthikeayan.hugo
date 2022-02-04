@@ -23,12 +23,12 @@ If condition, print parent element
 aws apigateway get-rest-apis --profile prod | jq '.items[] | . as $item | select(.name == "My Secure API") | $item'
 ```
 
+If condition, print parent element with contains
+```
+aws elbv2 describe-load-balancers | jq --arg lbname \"${lb_name}\" '.LoadBalancers[] | select( (.LoadBalancerName | contains($lbname)) and .Scheme == "internal" ) | .DNSName' -r
+```
+
 Pass argument to jq from Jenkins sh step
 ```
 aws appconfig list-configuration-profiles --application-id ${appId} | jq --arg rds \"${rds_name}\" '.Items[] | select(.Name == $rds) | .Id' -r
-```
-
-Condition on the inner element but return parent element
-```
-aws elbv2 describe-load-balancers | jq --arg lbname \"${lb_name}\" '.LoadBalancers[] | select( (.LoadBalancerName | contains($lbname)) and .Scheme == "internal" ) | .DNSName' -r
 ```
