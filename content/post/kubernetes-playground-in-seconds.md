@@ -22,6 +22,6 @@ Copy kubeadm join command from the kubeadm init output
 ```
 kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH
 
- kubectl apply -n kube-system -f \
+kubectl apply -n kube-system -f \
     "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d '\n')"
 ```
