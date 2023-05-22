@@ -23,6 +23,7 @@ Simple isn't it?
 * Install tcpdump (better copy the binary)
 * Take dump and copy it to your local
 * Load it to Wireshark
+
 Done, isn't it?
 
 But you don't see any HTTPS traffic in the Wireshark UI. What are we missing?
@@ -33,7 +34,8 @@ Since HTTPS requests are HTTP over TLS. All the HTTPS requests are encrypted. We
 It is an environment variable which is understood by most common used applications.
 
 ### Does Curl supports it?
-Yes, Just set the value of SSLKEYLOGFILE to the file path in the shell.
+Yes, but only the Curl with SSL support. (Build curl with SSL support - https://stackoverflow.com/questions/28782556/how-do-i-get-curl-to-use-https)
+Just set the value of SSLKEYLOGFILE to the file path in the shell.
 ```
 $ export SSLKEYLOGFILE=/tmp/sslkeylogfile.log
 
