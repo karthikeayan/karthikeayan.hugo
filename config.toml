@@ -1,13 +1,13 @@
 baseURL = "https://karthikeayan.github.io/"
 languageCode = "en-us"
-title = "Just a blog!"
+title = "!"
 theme = "minimal"
 disqusShortname = "username" # delete this to disable disqus comments
 googleAnalytics = "UA-170492285-1"
 
 [params]
     author = "Karthikeyan Sundararajan"
-    description = "by Karthikeyan Sundararajan"
+    description = ""
     githubUsername = "#karthikeayan"
     accent = "darkblue"
     showBorder = true
