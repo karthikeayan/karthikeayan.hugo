@@ -1,5 +1,5 @@
 ---
-title: aws-cloudwatch-k8s-api-log-filter.md
+title: aws-cloudwatch-k8s-api-log-filter
 description: Filter EKS API Server Logs in Cloudwatch
 tags: ["kubernetes", "eks", "logs", "query", "filter"]
 date: 2023-07-27
