@@ -32,3 +32,14 @@ Pass argument to jq from Jenkins sh step
 ```
 aws appconfig list-configuration-profiles --application-id ${appId} | jq --arg rds \"${rds_name}\" '.Items[] | select(.Name == $rds) | .Id' -r
 ```
+
+Find all the deployment names in Kubernetes, which contains environment variable value from from Kubernetes secret with specific key
+```
+k get deploy  -o json \
+  | jq '.items[] | . as $item
+  | .spec.template.spec.containers[].env | select (. != null)
+  | .[].valueFrom | select (. != null)
+  | .secretKeyRef | select (. != null)
+  | select (.key == "YOUR_KUBERNETES_SECRET_KEY") | $item
+  | .metadata.name' -r
+```
