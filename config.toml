@@ -9,7 +9,7 @@ theme = "paper"
 
 [params]
   # color style
-  color = 'linen'                           # linen, wheat, gray, light
+  color = 'gray'                           # linen, wheat, gray, light
 
   # header social icons
   twitter = 'twitter.com/karthikeayan'               # twitter.com/YOUR_TWITTER_ID
@@ -23,7 +23,7 @@ theme = "paper"
   # home page profile
   avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
   name = 'Karthikeyan Sundararajan'
-  bio = 'Truth tirumphs, even if there be no public support'
+  bio = 'Truth triumphs, even if there be no public support'
 
 
   # misc
@@ -38,7 +38,7 @@ theme = "paper"
   appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
 
   # RTL supprot
-  direction = "rtl"                         # RTL support for Right-to-left languages
+  # direction = "rtl"                         # RTL support for Right-to-left languages
 
   # giscus
 [params.giscus]
