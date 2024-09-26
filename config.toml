@@ -12,10 +12,10 @@ theme = "paper"
   color = 'gray'                           # linen, wheat, gray, light
 
   # header social icons
-  twitter = 'twitter.com/karthikeayan'               # twitter.com/YOUR_TWITTER_ID
-  github = 'github.com/karthikeayan'                 # github.com/YOUR_GITHUB_ID
+  twitter = 'karthikeayan'               # twitter.com/YOUR_TWITTER_ID
+  github = 'karthikeayan'                 # github.com/YOUR_GITHUB_ID
   instagram = 'YOUR_INSTAGRAM_ID'           # instagram.com/YOUR_INSTAGRAM_ID
-  linkedin = 'linkedin.com/in/karthikeyan-sundararajan/'             # linkedin.com/in/YOUR_LINKEDIN_ID
+  linkedin = 'karthikeyan-sundararajan/'             # linkedin.com/in/YOUR_LINKEDIN_ID
   mastodon = 'YOUR_MASTODON_LINK'           # e.g. 'https://mastodon.instance/@xxx'
   threads = '@YOUR_THREADS_ID'              # threads.net/@YOUR_THREADS_ID
   rss = false                                # show rss icon
