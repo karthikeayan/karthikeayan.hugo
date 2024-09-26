@@ -1,67 +1,46 @@
-baseURL = "https://karthikeayan.github.io/"
-languageCode = "en-us"
-title = "!"
-theme = "minimal"
-disqusShortname = "username" # delete this to disable disqus comments
-googleAnalytics = "UA-170492285-1"
+[services]
+  [services.disqus]
+    shortname = 'YOUR_DISQUS_SHORTNAME'     # use disqus comments
 
 [params]
-    author = "Karthikeyan Sundararajan"
-    description = ""
-    githubUsername = "#karthikeayan"
-    accent = "darkblue"
-    showBorder = true
-    backgroundColor = "#e6e6e6"
-    font = "Noto Sans" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "default"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
 
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
+  # header social icons
+  twitter = 'twitter.com/karthikeayan'               # twitter.com/YOUR_TWITTER_ID
+  github = 'github.com/karthikeayan'                 # github.com/YOUR_GITHUB_ID
+  instagram = 'YOUR_INSTAGRAM_ID'           # instagram.com/YOUR_INSTAGRAM_ID
+  linkedin = 'linkedin.com/in/karthikeyan-sundararajan/'             # linkedin.com/in/YOUR_LINKEDIN_ID
+  mastodon = 'YOUR_MASTODON_LINK'           # e.g. 'https://mastodon.instance/@xxx'
+  threads = '@YOUR_THREADS_ID'              # threads.net/@YOUR_THREADS_ID
+  rss = false                                # show rss icon
 
-[[menu.main]]
-    url = "/about/"
-    name = "About"
-    weight = 2
+  # home page profile
+  avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
+  name = 'Karthikeyan Sundararajan'
+  bio = 'Truth tirumphs, even if there be no public support'
 
-[[menu.main]]
-    url = "/post/"
-    name = "Posts"
-    weight = 3
 
-[[menu.main]]
-    url = "/project/"
-    name = "Projects"
-    weight = 4
+  # misc
+  disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = true              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  math = true                               # enable KaTeX math typesetting globally
+  localKatex = false                        # use local KaTeX js/css instead of CDN
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+  favicon = "favicon.ico"                   # customize the default favicon
+  appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
 
-# Social icons to be shown on the right-hand side of the navigation bar.
-# The "name" field should match the name of the icon in Font Awesome.
-# The list of available icons can be found at http://fontawesome.io/icons.
+  # RTL supprot
+  direction = "rtl"                         # RTL support for Right-to-left languages
 
-[[menu.icon]]
-    url = "mailto:karthikeayan@live.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://github.com/karthikeayan/"
-    name = "github"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://twitter.com/karthikeayan/"
-    name = "twitter"
-    weight = 3
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/karthikeyan-sundararajan/"
-    name = "linkedin"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://stackoverflow.com/users/2436847/karthikeayan"
-    name = "stack-overflow"
-    weight = 5
+  # giscus
+[params.giscus]
+  repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
+  repoId = 'YOUR_GISCUS_REPO_ID'
+  category = 'YOUR__GISCUS_CATEGORY'
+  categoryId = 'YOUR_GISCUS_CATEGORY_ID'
+  mapping = 'pathname'
+  theme = 'light'
+  lang = 'zh-CN'
