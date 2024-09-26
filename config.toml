@@ -21,7 +21,7 @@ theme = "paper"
   rss = false                                # show rss icon
 
   # home page profile
-  avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
+  avatar = 'https://avatars.githubusercontent.com/u/5030782?v=4&size=64'                 # gravatar email or image url
   name = 'Karthikeyan Sundararajan'
   bio = 'Truth triumphs, even without public support.'
 
