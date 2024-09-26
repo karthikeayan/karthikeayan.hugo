@@ -23,7 +23,7 @@ theme = "paper"
   # home page profile
   avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
   name = 'Karthikeyan Sundararajan'
-  bio = 'Truth triumphs, even if there be no public support'
+  bio = 'Truth triumphs, even without public support.'
 
 
   # misc
