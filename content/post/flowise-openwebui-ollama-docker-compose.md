@@ -2,8 +2,8 @@
 title: flowise-openwebui-ollama-docker-compose
 description: Docker Compose for Flowise OpenWebUI Ollama
 tags: ["ai", "docker-compose", "flowise", "ollama", "openwebui", "local", "localai"]
-date: 2025-15-03
-publishdate: 2025-15-03
+date: 2025-14-03
+publishdate: 2025-14-03
 ---
 
 #  Docker Compose for Flowise OpenWebUI Ollama
