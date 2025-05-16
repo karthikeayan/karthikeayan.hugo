@@ -1,0 +1,75 @@
+baseURL = "https://karthikeayan.github.io/"
+languageCode = "en-us"
+title = "Karthikeyan Sundararajan"
+theme = "paper"
+# disqusShortname = "username" # delete this to disable disqus comments
+# googleAnalytics = "UA-170492285-1"
+
+[services]
+[services.googleAnalytics]
+# Comment out the 'id' line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
+# There is no need to set another config variable called 'googleAnalytics'
+# Set id to either an old style `UA-xxxxxxxx` tracking code or a newer `G-xxxxxxxxxxx` measurement id 
+# Note tracking codes are deprecated, though can still be generate it under google analytics advanced options
+id = "UA-170492285-1"
+
+[params]
+    author = "Karthikeyan Sundararajan"
+    description = ""
+    githubUsername = "#karthikeayan"
+    accent = "darkblue"
+    showBorder = true
+    backgroundColor = "#e6e6e6"
+    font = "Noto Sans" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "default"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+
+[[menu.main]]
+    url = "/"
+    name = "Home"
+    weight = 1
+
+[[menu.main]]
+    url = "/about/"
+    name = "About"
+    weight = 2
+
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
+    weight = 3
+
+[[menu.main]]
+    url = "/project/"
+    name = "Projects"
+    weight = 4
+
+# Social icons to be shown on the right-hand side of the navigation bar.
+# The "name" field should match the name of the icon in Font Awesome.
+# The list of available icons can be found at http://fontawesome.io/icons.
+
+[[menu.icon]]
+    url = "mailto:karthikeayan@live.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/karthikeayan/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://twitter.com/karthikeayan/"
+    name = "twitter"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/karthikeyan-sundararajan/"
+    name = "linkedin"
+    weight = 4
+
+[[menu.icon]]
+    url = "https://stackoverflow.com/users/2436847/karthikeayan"
+    name = "stack-overflow"
+    weight = 5
