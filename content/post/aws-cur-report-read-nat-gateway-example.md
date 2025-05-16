@@ -1,7 +1,7 @@
 ---
 title: aws-cur-report-read-nat-gateway-example
 description: Read AWS CUR Report to understand NAT Gateway usage by ID
-tags: ["aws-cur", "cost", "finops", "budget", "nat-gateway", "pandas", "csv"]
+tags: ["aws-cur", "cost", "finops", "budget", "nat-gateway", "pandas", "csv", "kubernetes"]
 date: 2025-05-16
 publishdate: 2025-05-16
 ---
