@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dynamic on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/dynamic/</link>
+    <description>Recent content in Dynamic on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/dynamic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java-dynamic-heap-size</title>
+      <link>https://karthikeayan.github.io/post/java-dynamic-heap-size/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/java-dynamic-heap-size/</guid>
+      <description>Java Dynamic Heap Size Below statistics are tested on: amazoncorretto:8-alpine-jre&#xA;Percentage values can be used to set Maximum Heap Size: java -XX:+HeapDumpOnOutOfMemoryError -XX:OnError=&amp;#39;echo JVM exited with error&amp;#39; \ -XX:MaxRAMPercentage=90.0 \ -XX:MinRAMPercentage=40.0 \ -XX:+PrintGCDetails -jar app.jar When using percentage java heap size is set as below,&#xA;Container Memory Heap Size 8G 6.40G 16G 12.80G 32G 25.60G 64G 26.67G 128G 26.67G So, JVM Heap Size doesn&amp;rsquo;t go beyond 26.67G when using XX:MaxRAMPercentage</description>
+    </item>
+    <item>
+      <title>java-dynamic-heap-size</title>
+      <link>https://karthikeayan.github.io/posts/java-dynamic-heap-size/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/java-dynamic-heap-size/</guid>
+      <description>Java Dynamic Heap Size Below statistics are tested on: amazoncorretto:8-alpine-jre&#xA;Percentage values can be used to set Maximum Heap Size: java -XX:+HeapDumpOnOutOfMemoryError -XX:OnError=&amp;#39;echo JVM exited with error&amp;#39; \ -XX:MaxRAMPercentage=90.0 \ -XX:MinRAMPercentage=40.0 \ -XX:+PrintGCDetails -jar app.jar When using percentage java heap size is set as below,&#xA;Container Memory Heap Size 8G 6.40G 16G 12.80G 32G 25.60G 64G 26.67G 128G 26.67G So, JVM Heap Size doesn&amp;rsquo;t go beyond 26.67G when using XX:MaxRAMPercentage</description>
+    </item>
+  </channel>
+</rss>

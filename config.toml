@@ -3,10 +3,6 @@ languageCode = "en-us"
 title = "Karthikeyan Sundararajan"
 theme = "paper"
 
-[services]
-  [services.disqus]
-    shortname = 'YOUR_DISQUS_SHORTNAME'     # use disqus comments
-
 [params]
   # color style
   color = 'gray'                           # linen, wheat, gray, light
@@ -40,12 +36,3 @@ theme = "paper"
   # RTL supprot
   # direction = "rtl"                         # RTL support for Right-to-left languages
 
-  # giscus
-[params.giscus]
-  repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
-  repoId = 'YOUR_GISCUS_REPO_ID'
-  category = 'YOUR__GISCUS_CATEGORY'
-  categoryId = 'YOUR_GISCUS_CATEGORY_ID'
-  mapping = 'pathname'
-  theme = 'light'
-  lang = 'zh-CN'

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ad on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/ad/</link>
+    <description>Recent content in Ad on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/ad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure-ad-user-list</title>
+      <link>https://karthikeayan.github.io/post/azure-ad-user-list/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/azure-ad-user-list/</guid>
+      <description>Get user details from Azure AD Recently I came across a challenge in my work. We are using a CI tool and using an inbuilt authorization mechanism(roles) to control access to the users. CI tool is integrated with Azure AD. We had 300+ entries in the user &amp;gt; roles assignment list and reached the maximum limit.&#xA;We also know that there are multiple people who left the organization whose entries are still present.</description>
+    </item>
+    <item>
+      <title>azure-ad-user-list</title>
+      <link>https://karthikeayan.github.io/posts/azure-ad-user-list/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/azure-ad-user-list/</guid>
+      <description>Get user details from Azure AD Recently I came across a challenge in my work. We are using a CI tool and using an inbuilt authorization mechanism(roles) to control access to the users. CI tool is integrated with Azure AD. We had 300+ entries in the user &amp;gt; roles assignment list and reached the maximum limit.&#xA;We also know that there are multiple people who left the organization whose entries are still present.</description>
+    </item>
+  </channel>
+</rss>

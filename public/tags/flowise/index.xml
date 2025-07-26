@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flowise on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/flowise/</link>
+    <description>Recent content in Flowise on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/flowise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>flowise-openwebui-ollama-docker-compose</title>
+      <link>https://karthikeayan.github.io/post/flowise-openwebui-ollama-docker-compose/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/flowise-openwebui-ollama-docker-compose/</guid>
+      <description>Docker Compose for Flowise OpenWebUI Ollama Create .env file as below,&#xA;FLOWISE_USERNAME:admin FLOWISSE_PASSWORD:admin services: flowise: image: flowiseai/flowise restart: always environment: - PORT=3001 - FLOWISE_USERNAME=${FLOWISE_USERNAME} - FLOWISE_PASSWORD=${FLOWISE_PASSWORD} ports: - &amp;#34;3001:3001&amp;#34; volumes: - ./.flowise:/root/.flowise entrypoint: /bin/sh -c &amp;#34;sleep 3; flowise start&amp;#34; openWebUI: image: ghcr.io/open-webui/open-webui:main restart: always ports: - &amp;#34;3000:8080&amp;#34; environment: - OLLAMA_API_BASE_URL=http://ollama:11434 extra_hosts: - &amp;#34;host.docker.internal:host-gateway&amp;#34; volumes: - ./open-webui-local:/app/backend/data depends_on: - ollama ollama: image: ollama/ollama environment: - &amp;#39;OLLAMA_HOST=0.0.0.0&amp;#39; - &amp;#39;OLLAMA_PORT=11434&amp;#39; ports: - &amp;#34;11434:11434&amp;#34; volumes: - .</description>
+    </item>
+    <item>
+      <title>flowise-openwebui-ollama-docker-compose</title>
+      <link>https://karthikeayan.github.io/posts/flowise-openwebui-ollama-docker-compose/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/flowise-openwebui-ollama-docker-compose/</guid>
+      <description>Docker Compose for Flowise OpenWebUI Ollama Create .env file as below,&#xA;FLOWISE_USERNAME:admin FLOWISSE_PASSWORD:admin services: flowise: image: flowiseai/flowise restart: always environment: - PORT=3001 - FLOWISE_USERNAME=${FLOWISE_USERNAME} - FLOWISE_PASSWORD=${FLOWISE_PASSWORD} ports: - &amp;#34;3001:3001&amp;#34; volumes: - ./.flowise:/root/.flowise entrypoint: /bin/sh -c &amp;#34;sleep 3; flowise start&amp;#34; openWebUI: image: ghcr.io/open-webui/open-webui:main restart: always ports: - &amp;#34;3000:8080&amp;#34; environment: - OLLAMA_API_BASE_URL=http://ollama:11434 extra_hosts: - &amp;#34;host.docker.internal:host-gateway&amp;#34; volumes: - ./open-webui-local:/app/backend/data depends_on: - ollama ollama: image: ollama/ollama environment: - &amp;#39;OLLAMA_HOST=0.0.0.0&amp;#39; - &amp;#39;OLLAMA_PORT=11434&amp;#39; ports: - &amp;#34;11434:11434&amp;#34; volumes: - .</description>
+    </item>
+  </channel>
+</rss>

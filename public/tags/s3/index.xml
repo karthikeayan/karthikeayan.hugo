@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S3 on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/s3/</link>
+    <description>Recent content in S3 on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/post/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/posts/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+  </channel>
+</rss>

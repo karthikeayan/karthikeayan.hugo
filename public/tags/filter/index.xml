@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Filter on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/filter/</link>
+    <description>Recent content in Filter on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/filter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+  </channel>
+</rss>

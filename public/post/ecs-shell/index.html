@@ -1,0 +1,535 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>ecs-shell - Karthikeyan Sundararajan</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.
+Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.
+Also ECS was lacking a command line option just like,
+kubectl exec On March 2021, AWS launched a feature which is similar to &ldquo;kubectl exec&rdquo; to obtain a shell access of a container running on ECS Fargate." />
+  <meta name="author" content="Karthikeyan Sundararajan" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://karthikeayan.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/5030782?v=4&amp;size=64" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/mastodon.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/threads.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://karthikeayan.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://karthikeayan.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.123.7">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="ecs-shell">
+<meta itemprop="description" content="get-shell-of-a-container-running-on-ECS"><meta itemprop="datePublished" content="2021-12-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-12-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="226">
+<meta itemprop="keywords" content="aws,ecs,shell,bash,sh," />
+  
+  <meta property="og:title" content="ecs-shell" />
+<meta property="og:description" content="get-shell-of-a-container-running-on-ECS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karthikeayan.github.io/post/ecs-shell/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-12T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="ecs-shell"/>
+<meta name="twitter:description" content="get-shell-of-a-container-running-on-ECS"/>
+
+  
+  
+
+  
+  <link rel="canonical" href="https://karthikeayan.github.io/post/ecs-shell/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://karthikeayan.github.io/"
+      >Karthikeyan Sundararajan</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/YOUR_INSTAGRAM_ID"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/karthikeyan-sundararajan/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./mastodon.svg)"
+        href="YOUR_MASTODON_LINK"
+        target="_blank"
+        rel="me"
+      >
+        mastodon
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://karthikeayan.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">ecs-shell</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Dec 12, 2021</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="get-shell-of-a-container-running-on-ecs">Get shell of a container running on ECS</h1>
+<p>ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.</p>
+<p>Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.</p>
+<p>Also ECS was lacking a command line option just like,</p>
+<pre tabindex="0"><code>kubectl exec
+</code></pre><p>On March 2021, AWS launched a feature which is similar to &ldquo;kubectl exec&rdquo; to obtain a shell access of a container running on ECS Fargate.</p>
+<p><a href="https://aws.amazon.com/blogs/containers/new-using-amazon-ecs-exec-access-your-containers-fargate-ec2/">https://aws.amazon.com/blogs/containers/new-using-amazon-ecs-exec-access-your-containers-fargate-ec2/</a></p>
+<p>This helped me a lot to troubleshoot issues.</p>
+<p>Since I have to login into lots of different containers running on different ECS Clusters which in turn running on different AWS Accounts, it became difficult to copy paste and edit the command everytime.</p>
+<p>So, I just wrote a very simple shell script which can help me. Here is the script.</p>
+<pre tabindex="0"><code>#!/usr/local/bin/bash
+
+echo Enter Cluster Name:
+read -e cluster_name
+
+echo Enter Container Name:
+read -e container_name
+
+echo Enter Service Name:
+read -e service_name
+
+echo Enter AWS Profile Name:
+read -e profile
+
+region=&#34;eu-west-1&#34;
+
+task_ids=($(aws ecs list-tasks --cluster ${cluster_name} --service-name ${service_name} --profile ${profile} --region ${region} | jq &#39;.taskArns[]&#39; -r | cut -d&#39;/&#39; -f3))
+
+counter=1
+declare -A tasks
+for i in &#34;${task_ids[@]}&#34;
+do
+  echo &#34;${counter}: ${i}&#34;
+  tasks[&#34;${counter}&#34;]=&#34;${i}&#34;
+  counter=$((counter+1))
+done
+
+echo Enter Task Number:
+read task_counter
+
+aws ecs execute-command --cluster ${cluster_name} --task ${tasks[&#34;${task_counter}&#34;]} --container ${container_name} --interactive --command &#34;/bin/sh&#34; --profile ${profile} --region ${region}
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/aws"
+      >aws</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/ecs"
+      >ecs</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/shell"
+      >shell</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/bash"
+      >bash</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/sh"
+      >sh</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://karthikeayan.github.io/">Karthikeyan Sundararajan</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

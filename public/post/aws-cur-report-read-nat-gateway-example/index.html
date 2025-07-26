@@ -1,0 +1,670 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>aws-cur-report-read-nat-gateway-example - Karthikeyan Sundararajan</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile
+FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&#34;jupyter&#34;, &#34;notebook&#34;, &#34;--ip=0." />
+  <meta name="author" content="Karthikeyan Sundararajan" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://karthikeayan.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/5030782?v=4&amp;size=64" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/mastodon.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/threads.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://karthikeayan.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://karthikeayan.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.123.7">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="aws-cur-report-read-nat-gateway-example">
+<meta itemprop="description" content="Read AWS CUR Report to understand NAT Gateway usage by ID"><meta itemprop="datePublished" content="2025-05-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2025-05-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="437">
+<meta itemprop="keywords" content="aws-cur,cost,finops,budget,nat-gateway,pandas,csv,kubernetes," />
+  
+  <meta property="og:title" content="aws-cur-report-read-nat-gateway-example" />
+<meta property="og:description" content="Read AWS CUR Report to understand NAT Gateway usage by ID" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-05-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-05-16T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="aws-cur-report-read-nat-gateway-example"/>
+<meta name="twitter:description" content="Read AWS CUR Report to understand NAT Gateway usage by ID"/>
+
+  
+  
+
+  
+  <link rel="canonical" href="https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://karthikeayan.github.io/"
+      >Karthikeyan Sundararajan</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/YOUR_INSTAGRAM_ID"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/karthikeyan-sundararajan/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./mastodon.svg)"
+        href="YOUR_MASTODON_LINK"
+        target="_blank"
+        rel="me"
+      >
+        mastodon
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://karthikeayan.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">aws-cur-report-read-nat-gateway-example</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>May 16, 2025</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="read-aws-cur-report-to-understand-nat-gateway-usage-by-id">Read AWS CUR Report to understand NAT Gateway usage by ID</h1>
+<p>Build Jupyter Notebook Image with below Dockerfile</p>
+<pre tabindex="0"><code>FROM python:3.13
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Install Jupyter Notebook
+RUN pip install jupyter===1.1.1
+RUN pip install pandas
+RUN pip install awscli
+RUN pip install boto3
+RUN pip install fsspec
+RUN pip install s3fs
+
+# Make port 8888 available to the world outside this container
+EXPOSE 8888
+
+# Define environment variable
+# ENV NAME World
+
+# Run Jupyter Notebook when the container launches
+CMD [&#34;jupyter&#34;, &#34;notebook&#34;, &#34;--ip=0.0.0.0&#34;, &#34;--port=8888&#34;, &#34;--no-browser&#34;, &#34;--allow-root&#34;]
+</code></pre><p>Build and push the image to container registry</p>
+<pre tabindex="0"><code>docker build . -t jupyter-notebook:1.1.1
+docker push jupyter-notebook:1.1.1
+</code></pre><p>Deploy to Kubernetes</p>
+<pre tabindex="0"><code>apiVersion: v1
+kind: Namespace
+metadata:
+  name: jupyter-notebook
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jupyter-notebook
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jupyter-notebook-token
+data:
+  jupyter_notebook_config.py: |
+    c.NotebookApp.token = &#39;1234RANDOM_TOKENc56789&#39;
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-notebook
+  namespace: jupyter-notebook
+  labels:
+    app: jupyter-notebook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jupyter-notebook
+  template:
+    metadata:
+      labels:
+        app: jupyter-notebook
+    spec:
+      containers:
+      - name: jupyter-notebook
+        image: jupyter-notebook:1.1.1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: 14G
+        ports:
+        - containerPort: 8888
+        volumeMounts:
+        - name: storage
+          mountPath: /app
+        - name: config-volume
+          mountPath: /root/.jupyter/jupyter_notebook_config.py
+          subPath: jupyter_notebook_config.py
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: jupyter-notebook
+      - name: config-volume
+        configMap:
+          name: jupyter-notebook-token
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jupyter-notebook
+  namespace: jupyter-notebook
+spec:
+  selector:
+    app: jupyter-notebook
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8888
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jupyter-notebook
+  namespace: jupyter-notebook
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: jupyter.mycompany.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: jupyter-notebook
+                port:
+                  number: 80
+</code></pre><p>Python snippet to read the CUR from AWS S3 and group the NAT Gateway cost by ID</p>
+<pre tabindex="0"><code># Approximate execution time: 500 seconds
+
+import boto3
+from io import BytesIO
+import pandas as pd
+
+s3 = boto3.client(&#34;s3&#34;)
+bucket_name = &#34;YOUR_BUCKET_NAME&#34;
+prefix = &#34;CUR/MyCostReport/20250401-20250501/&#34;  # Adjust based on your report structure
+
+# List all files in the CUR folder
+response = s3.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+files = [obj[&#34;Key&#34;] for obj in response.get(&#34;Contents&#34;, []) if obj[&#34;Key&#34;].endswith(&#34;.csv.gz&#34;)]
+
+chunksize = 10000
+agg_dict = {}
+
+# Process all files
+for file_key in files:
+    response = s3.get_object(Bucket=bucket_name, Key=file_key)
+    file_content = BytesIO(response[&#34;Body&#34;].read())
+
+    for chunk in pd.read_csv(file_content, compression=&#34;gzip&#34;, low_memory=False, chunksize=chunksize):
+        chunk_filtered = chunk.loc[chunk[&#34;product/groupDescription&#34;] == &#34;Charge for per GB data processed by NatGateways&#34;]
+        grouped_chunk = chunk_filtered.groupby([&#34;lineItem/ResourceId&#34;, &#34;lineItem/UsageAccountId&#34;])[&#34;lineItem/BlendedCost&#34;].sum()
+
+        for index, value in grouped_chunk.items():
+            agg_dict[index] = agg_dict.get(index, 0) + value
+
+# Convert results to DataFrame
+df_grouped = pd.DataFrame(list(agg_dict.items()), columns=[&#34;Resource_Account&#34;, &#34;BlendedCost&#34;])
+df_sorted = df_grouped.sort_values(by=&#34;BlendedCost&#34;, ascending=False)
+
+print(df_sorted.to_string(index=False))
+</code></pre><p>In the above script, I used 10000 as chunksize, you can adjust this based on the memory of your Jupyter Notebook container memory</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/aws-cur"
+      >aws-cur</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/cost"
+      >cost</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/finops"
+      >finops</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/budget"
+      >budget</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/nat-gateway"
+      >nat-gateway</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/pandas"
+      >pandas</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/csv"
+      >csv</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/kubernetes"
+      >kubernetes</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://karthikeayan.github.io/">Karthikeyan Sundararajan</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csv on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/csv/</link>
+    <description>Recent content in Csv on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+  </channel>
+</rss>

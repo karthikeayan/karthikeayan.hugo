@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sh on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/sh/</link>
+    <description>Recent content in Sh on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/sh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/post/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/posts/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Playground on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/playground/</link>
+    <description>Recent content in Playground on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/playground/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+  </channel>
+</rss>

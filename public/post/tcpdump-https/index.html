@@ -1,0 +1,570 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>tcpdump-https - Karthikeyan Sundararajan</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:" />
+  <meta name="author" content="Karthikeyan Sundararajan" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://karthikeayan.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/5030782?v=4&amp;size=64" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/mastodon.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/threads.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://karthikeayan.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://karthikeayan.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.123.7">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="tcpdump-https">
+<meta itemprop="description" content="TCP Dump HTTPS"><meta itemprop="datePublished" content="2023-05-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-05-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="421">
+<meta itemprop="keywords" content="tcpdump,https,network,packet,kubernetes,observability," />
+  
+  <meta property="og:title" content="tcpdump-https" />
+<meta property="og:description" content="TCP Dump HTTPS" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karthikeayan.github.io/post/tcpdump-https/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-05-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-21T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="tcpdump-https"/>
+<meta name="twitter:description" content="TCP Dump HTTPS"/>
+
+  
+  
+
+  
+  <link rel="canonical" href="https://karthikeayan.github.io/post/tcpdump-https/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://karthikeayan.github.io/"
+      >Karthikeyan Sundararajan</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/YOUR_INSTAGRAM_ID"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/karthikeyan-sundararajan/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./mastodon.svg)"
+        href="YOUR_MASTODON_LINK"
+        target="_blank"
+        rel="me"
+      >
+        mastodon
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://karthikeayan.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">tcpdump-https</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>May 21, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="how-to-capture-https-outbound-requestresponse-headers">How to capture HTTPS outbound request/response headers?</h1>
+<p>What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&rsquo;t have access to the target Rest endpoint?
+When we seek for help, everyone will suggest to see the response headers of the HTTPS request.
+But how can we see the response header? There are couple of ways:</p>
+<ul>
+<li>Log HTTPS request/response header in your application - Quicker solution</li>
+<li>Use any monitoring tools that provides this feature, could be costly</li>
+<li>Look for any tool. Simple Google search will suggest to use Fiddler but from my quick look that is for local developement debugging.</li>
+<li>Look for any other tool. HTTPToolKit looks promising but as of writing this article, it doesn&rsquo;t have headless feature. So, running this in your infra may be challenging. Especially in Kubernetes.</li>
+<li>Stick with old school approach, tcpdump.</li>
+</ul>
+<h2 id="tcp-dump">TCP Dump</h2>
+<p>Simple isn&rsquo;t it?</p>
+<ul>
+<li>Just take tcp dump by logging into the target pod/server</li>
+<li>Install tcpdump (better copy the binary)</li>
+<li>Take dump and copy it to your local</li>
+<li>Load it to Wireshark</li>
+</ul>
+<p>Done, isn&rsquo;t it?</p>
+<p>But you don&rsquo;t see any HTTPS traffic in the Wireshark UI. What are we missing?</p>
+<p>Since HTTPS requests are HTTP over TLS. All the HTTPS requests are encrypted. We need the secrets to decrypt the data.</p>
+<h2 id="what-is-sslkeylogfile">What is SSLKEYLOGFILE?</h2>
+<p>It is an environment variable which is understood by most common used applications.</p>
+<h3 id="does-curl-supports-it">Does Curl supports it?</h3>
+<p>Yes, but only the Curl with SSL support. (Build curl with SSL support - <a href="https://stackoverflow.com/questions/28782556/how-do-i-get-curl-to-use-https">https://stackoverflow.com/questions/28782556/how-do-i-get-curl-to-use-https</a>)
+Just set the value of SSLKEYLOGFILE to the file path in the shell.</p>
+<pre tabindex="0"><code>$ export SSLKEYLOGFILE=/tmp/sslkeylogfile.log
+
+# Start tcpdump in another shell
+
+$ curl https://google.com
+&lt;HTML&gt;&lt;HEAD&gt;&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34;&gt;
+&lt;TITLE&gt;301 Moved&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;
+&lt;H1&gt;301 Moved&lt;/H1&gt;
+The document has moved
+&lt;A HREF=&#34;https://www.google.com/&#34;&gt;here&lt;/A&gt;.
+&lt;/BODY&gt;&lt;/HTML&gt;
+
+$ cat /tmp/SSLKEYLOGFILE
+CLIENT_RANDOM C76EE3XXXXX FB0CE69XXXXX
+</code></pre><h3 id="does-browsers-supports-it">Does browsers supports it?</h3>
+<p>Yes, Just set the value of SSLKEYLOGFILE to the file path in the shell and open browser from the shell.</p>
+<pre tabindex="0"><code>$ export SSLKEYLOGFILE=/tmp/sslkeylogfile.log
+
+# Start tcpdump in another shell
+
+$ /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+$ cat /tmp/SSLKEYLOGFILE
+CLIENT_RANDOM C76EE3XXXXX FB0CE69XXXXX
+</code></pre><h2 id="tell-wireshark-to-use-the-sslkeylogfile">Tell Wireshark to use the SSLKEYLOGFILE</h2>
+<p>Go to</p>
+<ul>
+<li>Wireshark Preferences</li>
+<li>Protocols &ndash;&gt; TLS</li>
+<li>(Pre)-Master-Secret log filename &ndash;&gt; Select /tmp/sslkeylogfile.log</li>
+<li>Open dump file</li>
+<li>Thats it, you can see the HTTPS requests</li>
+</ul>
+<h2 id="but-what-about-java-applications">But what about JAVA applications?</h2>
+<p>Make use of Java Agents.</p>
+<ul>
+<li>Download this Jar file, <a href="https://github.com/neykov/extract-tls-secrets">https://github.com/neykov/extract-tls-secrets</a></li>
+<li>Attach it to yoru Java application</li>
+</ul>
+<pre tabindex="0"><code>java -javaagent:~/Downloads/extract-tls-secrets-4.0.0.jar=/tmp/sslkeylogfile.log -jar MyApp.jar
+</code></pre><ul>
+<li>In Kubernetes, we can make use of JAVA_TOOL_OPTIONS environment varilable.</li>
+</ul>
+<pre tabindex="0"><code>env:
+  name: JAVA_TOOL_OPTIONS
+  value: -javaagent:~/Downloads/extract-tls-secrets-4.0.0.jar=/tmp/sslkeylogfile.log
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/tcpdump"
+      >tcpdump</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/https"
+      >https</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/network"
+      >network</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/packet"
+      >packet</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/kubernetes"
+      >kubernetes</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/observability"
+      >observability</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://karthikeayan.github.io/">Karthikeyan Sundararajan</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>

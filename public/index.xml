@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/</link>
+    <description>Recent content on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+    <item>
+      <title>flowise-openwebui-ollama-docker-compose</title>
+      <link>https://karthikeayan.github.io/post/flowise-openwebui-ollama-docker-compose/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/flowise-openwebui-ollama-docker-compose/</guid>
+      <description>Docker Compose for Flowise OpenWebUI Ollama Create .env file as below,&#xA;FLOWISE_USERNAME:admin FLOWISSE_PASSWORD:admin services: flowise: image: flowiseai/flowise restart: always environment: - PORT=3001 - FLOWISE_USERNAME=${FLOWISE_USERNAME} - FLOWISE_PASSWORD=${FLOWISE_PASSWORD} ports: - &amp;#34;3001:3001&amp;#34; volumes: - ./.flowise:/root/.flowise entrypoint: /bin/sh -c &amp;#34;sleep 3; flowise start&amp;#34; openWebUI: image: ghcr.io/open-webui/open-webui:main restart: always ports: - &amp;#34;3000:8080&amp;#34; environment: - OLLAMA_API_BASE_URL=http://ollama:11434 extra_hosts: - &amp;#34;host.docker.internal:host-gateway&amp;#34; volumes: - ./open-webui-local:/app/backend/data depends_on: - ollama ollama: image: ollama/ollama environment: - &amp;#39;OLLAMA_HOST=0.0.0.0&amp;#39; - &amp;#39;OLLAMA_PORT=11434&amp;#39; ports: - &amp;#34;11434:11434&amp;#34; volumes: - .</description>
+    </item>
+    <item>
+      <title>flowise-openwebui-ollama-docker-compose</title>
+      <link>https://karthikeayan.github.io/posts/flowise-openwebui-ollama-docker-compose/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/flowise-openwebui-ollama-docker-compose/</guid>
+      <description>Docker Compose for Flowise OpenWebUI Ollama Create .env file as below,&#xA;FLOWISE_USERNAME:admin FLOWISSE_PASSWORD:admin services: flowise: image: flowiseai/flowise restart: always environment: - PORT=3001 - FLOWISE_USERNAME=${FLOWISE_USERNAME} - FLOWISE_PASSWORD=${FLOWISE_PASSWORD} ports: - &amp;#34;3001:3001&amp;#34; volumes: - ./.flowise:/root/.flowise entrypoint: /bin/sh -c &amp;#34;sleep 3; flowise start&amp;#34; openWebUI: image: ghcr.io/open-webui/open-webui:main restart: always ports: - &amp;#34;3000:8080&amp;#34; environment: - OLLAMA_API_BASE_URL=http://ollama:11434 extra_hosts: - &amp;#34;host.docker.internal:host-gateway&amp;#34; volumes: - ./open-webui-local:/app/backend/data depends_on: - ollama ollama: image: ollama/ollama environment: - &amp;#39;OLLAMA_HOST=0.0.0.0&amp;#39; - &amp;#39;OLLAMA_PORT=11434&amp;#39; ports: - &amp;#34;11434:11434&amp;#34; volumes: - .</description>
+    </item>
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+    <item>
+      <title>kubernetes-api-resources</title>
+      <link>https://karthikeayan.github.io/post/kubernetes-api-resources/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/kubernetes-api-resources/</guid>
+      <description>List of Kubernetes API Resources Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;| NAME SHORTNAMES APIVERSION NAMESPACED KIND VERBS | |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | apiservices apiregistration.k8s.io/v1 false APIService [create delete deletecollection get list patch update watch] | | bindings v1 true Binding [create] | | certificatesigningrequests csr certificates.k8s.io/v1 false CertificateSigningRequest [create delete deletecollection get list patch update watch] | | clusterrolebindings rbac.authorization.k8s.io/v1 false ClusterRoleBinding [create delete deletecollection get list patch update watch] | | clusterroles rbac.</description>
+    </item>
+    <item>
+      <title>kubernetes-api-resources</title>
+      <link>https://karthikeayan.github.io/posts/kubernetes-api-resources/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/kubernetes-api-resources/</guid>
+      <description>List of Kubernetes API Resources Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;| NAME SHORTNAMES APIVERSION NAMESPACED KIND VERBS | |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | apiservices apiregistration.k8s.io/v1 false APIService [create delete deletecollection get list patch update watch] | | bindings v1 true Binding [create] | | certificatesigningrequests csr certificates.k8s.io/v1 false CertificateSigningRequest [create delete deletecollection get list patch update watch] | | clusterrolebindings rbac.authorization.k8s.io/v1 false ClusterRoleBinding [create delete deletecollection get list patch update watch] | | clusterroles rbac.</description>
+    </item>
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/post/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/posts/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+    <item>
+      <title>good-blogs</title>
+      <link>https://karthikeayan.github.io/post/good-blogs/</link>
+      <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/good-blogs/</guid>
+      <description>List of good tech blogs https://paulbutler.org/posts/&#xA;https://ketansingh.me/&#xA;https://jvns.ca/&#xA;https://srvaroa.github.io/</description>
+    </item>
+    <item>
+      <title>good-blogs</title>
+      <link>https://karthikeayan.github.io/posts/good-blogs/</link>
+      <pubDate>Sun, 13 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/good-blogs/</guid>
+      <description>List of good tech blogs https://paulbutler.org/posts/&#xA;https://ketansingh.me/&#xA;https://jvns.ca/&#xA;https://srvaroa.github.io/</description>
+    </item>
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+    <item>
+      <title>azure-ad-user-list</title>
+      <link>https://karthikeayan.github.io/post/azure-ad-user-list/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/azure-ad-user-list/</guid>
+      <description>Get user details from Azure AD Recently I came across a challenge in my work. We are using a CI tool and using an inbuilt authorization mechanism(roles) to control access to the users. CI tool is integrated with Azure AD. We had 300+ entries in the user &amp;gt; roles assignment list and reached the maximum limit.&#xA;We also know that there are multiple people who left the organization whose entries are still present.</description>
+    </item>
+    <item>
+      <title>azure-ad-user-list</title>
+      <link>https://karthikeayan.github.io/posts/azure-ad-user-list/</link>
+      <pubDate>Fri, 24 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/azure-ad-user-list/</guid>
+      <description>Get user details from Azure AD Recently I came across a challenge in my work. We are using a CI tool and using an inbuilt authorization mechanism(roles) to control access to the users. CI tool is integrated with Azure AD. We had 300+ entries in the user &amp;gt; roles assignment list and reached the maximum limit.&#xA;We also know that there are multiple people who left the organization whose entries are still present.</description>
+    </item>
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/post/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/posts/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+    <item>
+      <title>nerdctl-docker-alternate</title>
+      <link>https://karthikeayan.github.io/post/lima-docker-alternate/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/lima-docker-alternate/</guid>
+      <description>Nerdctl, Docker Alternate Using Docker in local desktop is not free anymore for large businesses,&#xA;Our Docker Subscription Service Agreement includes a change to the terms for Docker Desktop It remains free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects. Extracted from, https://www.docker.com/products/docker-desktop&#xA;Many of us using Docker Desktop in day to day activities are part of large businesses.</description>
+    </item>
+    <item>
+      <title>nerdctl-docker-alternate</title>
+      <link>https://karthikeayan.github.io/posts/lima-docker-alternate/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/lima-docker-alternate/</guid>
+      <description>Nerdctl, Docker Alternate Using Docker in local desktop is not free anymore for large businesses,&#xA;Our Docker Subscription Service Agreement includes a change to the terms for Docker Desktop It remains free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects. Extracted from, https://www.docker.com/products/docker-desktop&#xA;Many of us using Docker Desktop in day to day activities are part of large businesses.</description>
+    </item>
+    <item>
+      <title>jq-cheatsheet</title>
+      <link>https://karthikeayan.github.io/post/jq-cheatsheet/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/jq-cheatsheet/</guid>
+      <description>JQ CheatSheet If condition&#xA;aws apigateway get-rest-apis --profile prod | jq &amp;#39;.items[] | select(.name == &amp;#34;My Secure API&amp;#34;) | .id&amp;#39; -r Multiple if condition&#xA;aws s3api get-object-tagging --bucket my-bucket --key screenshot.png | jq &amp;#39;.TagSet[] | select(.Key == &amp;#34;dev&amp;#34; and .Value == &amp;#34;true&amp;#34;)&amp;#39; If condition, print parent element&#xA;aws apigateway get-rest-apis --profile prod | jq &amp;#39;.items[] | . as $item | select(.name == &amp;#34;My Secure API&amp;#34;) | $item&amp;#39; If condition, print parent element with contains</description>
+    </item>
+    <item>
+      <title>jq-cheatsheet</title>
+      <link>https://karthikeayan.github.io/posts/jq-cheatsheet/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/jq-cheatsheet/</guid>
+      <description>JQ CheatSheet If condition&#xA;aws apigateway get-rest-apis --profile prod | jq &amp;#39;.items[] | select(.name == &amp;#34;My Secure API&amp;#34;) | .id&amp;#39; -r Multiple if condition&#xA;aws s3api get-object-tagging --bucket my-bucket --key screenshot.png | jq &amp;#39;.TagSet[] | select(.Key == &amp;#34;dev&amp;#34; and .Value == &amp;#34;true&amp;#34;)&amp;#39; If condition, print parent element&#xA;aws apigateway get-rest-apis --profile prod | jq &amp;#39;.items[] | . as $item | select(.name == &amp;#34;My Secure API&amp;#34;) | $item&amp;#39; If condition, print parent element with contains</description>
+    </item>
+    <item>
+      <title>java-dynamic-heap-size</title>
+      <link>https://karthikeayan.github.io/post/java-dynamic-heap-size/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/java-dynamic-heap-size/</guid>
+      <description>Java Dynamic Heap Size Below statistics are tested on: amazoncorretto:8-alpine-jre&#xA;Percentage values can be used to set Maximum Heap Size: java -XX:+HeapDumpOnOutOfMemoryError -XX:OnError=&amp;#39;echo JVM exited with error&amp;#39; \ -XX:MaxRAMPercentage=90.0 \ -XX:MinRAMPercentage=40.0 \ -XX:+PrintGCDetails -jar app.jar When using percentage java heap size is set as below,&#xA;Container Memory Heap Size 8G 6.40G 16G 12.80G 32G 25.60G 64G 26.67G 128G 26.67G So, JVM Heap Size doesn&amp;rsquo;t go beyond 26.67G when using XX:MaxRAMPercentage</description>
+    </item>
+    <item>
+      <title>java-dynamic-heap-size</title>
+      <link>https://karthikeayan.github.io/posts/java-dynamic-heap-size/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/java-dynamic-heap-size/</guid>
+      <description>Java Dynamic Heap Size Below statistics are tested on: amazoncorretto:8-alpine-jre&#xA;Percentage values can be used to set Maximum Heap Size: java -XX:+HeapDumpOnOutOfMemoryError -XX:OnError=&amp;#39;echo JVM exited with error&amp;#39; \ -XX:MaxRAMPercentage=90.0 \ -XX:MinRAMPercentage=40.0 \ -XX:+PrintGCDetails -jar app.jar When using percentage java heap size is set as below,&#xA;Container Memory Heap Size 8G 6.40G 16G 12.80G 32G 25.60G 64G 26.67G 128G 26.67G So, JVM Heap Size doesn&amp;rsquo;t go beyond 26.67G when using XX:MaxRAMPercentage</description>
+    </item>
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/post/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/posts/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/post/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/posts/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://karthikeayan.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/about/</guid>
+      <description>Just a blog hosted 100% free.</description>
+    </item>
+  </channel>
+</rss>

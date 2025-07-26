@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/network/</link>
+    <description>Recent content in Network on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 May 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/post/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/posts/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+  </channel>
+</rss>

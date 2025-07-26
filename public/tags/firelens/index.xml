@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firelens on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/firelens/</link>
+    <description>Recent content in Firelens on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 22 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/firelens/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/post/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/posts/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alternate on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/alternate/</link>
+    <description>Recent content in Alternate on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/alternate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nerdctl-docker-alternate</title>
+      <link>https://karthikeayan.github.io/post/lima-docker-alternate/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/lima-docker-alternate/</guid>
+      <description>Nerdctl, Docker Alternate Using Docker in local desktop is not free anymore for large businesses,&#xA;Our Docker Subscription Service Agreement includes a change to the terms for Docker Desktop It remains free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects. Extracted from, https://www.docker.com/products/docker-desktop&#xA;Many of us using Docker Desktop in day to day activities are part of large businesses.</description>
+    </item>
+    <item>
+      <title>nerdctl-docker-alternate</title>
+      <link>https://karthikeayan.github.io/posts/lima-docker-alternate/</link>
+      <pubDate>Sat, 13 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/lima-docker-alternate/</guid>
+      <description>Nerdctl, Docker Alternate Using Docker in local desktop is not free anymore for large businesses,&#xA;Our Docker Subscription Service Agreement includes a change to the terms for Docker Desktop It remains free for small businesses (fewer than 250 employees AND less than $10 million in annual revenue), personal use, education, and non-commercial open source projects. Extracted from, https://www.docker.com/products/docker-desktop&#xA;Many of us using Docker Desktop in day to day activities are part of large businesses.</description>
+    </item>
+  </channel>
+</rss>

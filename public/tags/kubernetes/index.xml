@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+    <item>
+      <title>aws-cur-report-read-nat-gateway-example</title>
+      <link>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cur-report-read-nat-gateway-example/</guid>
+      <description>Read AWS CUR Report to understand NAT Gateway usage by ID Build Jupyter Notebook Image with below Dockerfile&#xA;FROM python:3.13 # Set the working directory to /app WORKDIR /app # Install Jupyter Notebook RUN pip install jupyter===1.1.1 RUN pip install pandas RUN pip install awscli RUN pip install boto3 RUN pip install fsspec RUN pip install s3fs # Make port 8888 available to the world outside this container EXPOSE 8888 # Define environment variable # ENV NAME World # Run Jupyter Notebook when the container launches CMD [&amp;#34;jupyter&amp;#34;, &amp;#34;notebook&amp;#34;, &amp;#34;--ip=0.</description>
+    </item>
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+    <item>
+      <title>aws-cloudwatch-k8s-api-log-filter</title>
+      <link>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-cloudwatch-k8s-api-log-filter/</guid>
+      <description>Filter EKS API Server Logs in Cloudwatch Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;Open Cloudwatch Open Logs Insights Select EKS API Server Log group fields @timestamp, @message, sourceIPs.0 | filter responseObject.metadata.name like /REPLACE_NAMEPSACE_NAME_HERE/ | filter verb like /create/ | filter requestURI like /api\/v1\/namespaces/ | filter responseObject.kind like /Namespace/ | sort @timestamp desc </description>
+    </item>
+    <item>
+      <title>kubernetes-api-resources</title>
+      <link>https://karthikeayan.github.io/post/kubernetes-api-resources/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/kubernetes-api-resources/</guid>
+      <description>List of Kubernetes API Resources Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;| NAME SHORTNAMES APIVERSION NAMESPACED KIND VERBS | |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | apiservices apiregistration.k8s.io/v1 false APIService [create delete deletecollection get list patch update watch] | | bindings v1 true Binding [create] | | certificatesigningrequests csr certificates.k8s.io/v1 false CertificateSigningRequest [create delete deletecollection get list patch update watch] | | clusterrolebindings rbac.authorization.k8s.io/v1 false ClusterRoleBinding [create delete deletecollection get list patch update watch] | | clusterroles rbac.</description>
+    </item>
+    <item>
+      <title>kubernetes-api-resources</title>
+      <link>https://karthikeayan.github.io/posts/kubernetes-api-resources/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/kubernetes-api-resources/</guid>
+      <description>List of Kubernetes API Resources Kubernetes Version: 1.25 Cloud Provider: AWS EKS&#xA;| NAME SHORTNAMES APIVERSION NAMESPACED KIND VERBS | |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | apiservices apiregistration.k8s.io/v1 false APIService [create delete deletecollection get list patch update watch] | | bindings v1 true Binding [create] | | certificatesigningrequests csr certificates.k8s.io/v1 false CertificateSigningRequest [create delete deletecollection get list patch update watch] | | clusterrolebindings rbac.authorization.k8s.io/v1 false ClusterRoleBinding [create delete deletecollection get list patch update watch] | | clusterroles rbac.</description>
+    </item>
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/post/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+    <item>
+      <title>tcpdump-https</title>
+      <link>https://karthikeayan.github.io/posts/tcpdump-https/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/tcpdump-https/</guid>
+      <description>How to capture HTTPS outbound request/response headers? What to do when you get unexpected HTTPS Response code from your application or any third party application which you are using that connects to Rest endpoint? Especially when we don&amp;rsquo;t have access to the target Rest endpoint? When we seek for help, everyone will suggest to see the response headers of the HTTPS request. But how can we see the response header? There are couple of ways:</description>
+    </item>
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+    <item>
+      <title>kubernetes-playground-in-seconds</title>
+      <link>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</link>
+      <pubDate>Sat, 12 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/kubernetes-playground-in-seconds/</guid>
+      <description>Get kubernetes cluster in seconds to play with Go to&#xA;https://labs.play-with-k8s.com/ Login and execute below command on instance1&#xA;kubeadm init --apiserver-advertise-address $(hostname -i) Copy kubeadm join command from the kubeadm init output and execute join in instance2&#xA;kubeadm join --token SOMETOKEN SOMEIPADDRESS --discovery-token-ca-cert-hash SOMESHAHASH kubectl apply -n kube-system -f \ &amp;#34;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 |tr -d &amp;#39;\n&amp;#39;)&amp;#34; </description>
+    </item>
+  </channel>
+</rss>

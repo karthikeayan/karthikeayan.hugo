@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aws on Karthikeyan Sundararajan</title>
+    <link>https://karthikeayan.github.io/tags/aws/</link>
+    <description>Recent content in Aws on Karthikeyan Sundararajan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://karthikeayan.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/post/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+    <item>
+      <title>ecs-shell</title>
+      <link>https://karthikeayan.github.io/posts/ecs-shell/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/ecs-shell/</guid>
+      <description>Get shell of a container running on ECS ECS is a managed container orchestration service by AWS. Known for its simplicity, especially ECS Fargate.&#xA;Since ECS Fargate nodes are completely managed by AWS, there is no way to SSH into the node.&#xA;Also ECS was lacking a command line option just like,&#xA;kubectl exec On March 2021, AWS launched a feature which is similar to &amp;ldquo;kubectl exec&amp;rdquo; to obtain a shell access of a container running on ECS Fargate.</description>
+    </item>
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/post/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+    <item>
+      <title>terraform-access-denied-access-denied</title>
+      <link>https://karthikeayan.github.io/posts/terraform-access-denied/</link>
+      <pubDate>Thu, 21 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/terraform-access-denied/</guid>
+      <description>Terraform Access Denied Access Denied You are working with Terraform, AWS and S3 for Remote State and suddenly you see a message&#xA;AccessDenied: Access Denied Terraform doesn&amp;rsquo;t give you lots of information, you are checking your IAM access, checking your Terraform provider and scratching your head what is going on.&#xA;This is what I did.&#xA;I ran &amp;ldquo;terraform apply&amp;rdquo; with provider pointing to Account A. Terraform created few resources in AWS and its corresponding state in S3 bucket.</description>
+    </item>
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/post/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/post/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+    <item>
+      <title>aws-firelens-overview</title>
+      <link>https://karthikeayan.github.io/posts/aws-firelens-overview/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://karthikeayan.github.io/posts/aws-firelens-overview/</guid>
+      <description>AWS Firelens Overview What is AWS Firelens? Wrapper on top of fluentbit to make fluentbit work seamlessly with AWS services.&#xA;What does that mean? If you have applications running in AWS using AWS ECS, AWS Firelens will help in sending those application logs to different places like Elasticsearch, Cloudwatch, Firehose etc.,</description>
+    </item>
+  </channel>
+</rss>

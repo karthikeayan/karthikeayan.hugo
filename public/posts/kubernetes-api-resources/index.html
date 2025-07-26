@@ -1,0 +1,536 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #fbfbfb"
+  lang="en-us"
+  dir="ltr"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>kubernetes-api-resources - Karthikeyan Sundararajan</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="List of Kubernetes API Resources Kubernetes Version: 1.25 Cloud Provider: AWS EKS
+| NAME SHORTNAMES APIVERSION NAMESPACED KIND VERBS | |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | apiservices apiregistration.k8s.io/v1 false APIService [create delete deletecollection get list patch update watch] | | bindings v1 true Binding [create] | | certificatesigningrequests csr certificates.k8s.io/v1 false CertificateSigningRequest [create delete deletecollection get list patch update watch] | | clusterrolebindings rbac.authorization.k8s.io/v1 false ClusterRoleBinding [create delete deletecollection get list patch update watch] | | clusterroles rbac." />
+  <meta name="author" content="Karthikeyan Sundararajan" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://karthikeayan.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://avatars.githubusercontent.com/u/5030782?v=4&amp;size=64" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/twitter.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/github.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/instagram.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/linkedin.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/mastodon.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/threads.svg" />
+  
+  <link rel="preload" as="image" href="https://karthikeayan.github.io/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link
+    rel="icon"
+    href="https://karthikeayan.github.io/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://karthikeayan.github.io/apple-touch-icon.png"
+  />
+
+  
+  <meta name="generator" content="Hugo 0.123.7">
+
+  
+  
+  
+  
+  
+  <meta itemprop="name" content="kubernetes-api-resources">
+<meta itemprop="description" content="List of Kubernetes API Resources"><meta itemprop="datePublished" content="2023-07-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-07-21T00:00:00+00:00" />
+<meta itemprop="wordCount" content="799">
+<meta itemprop="keywords" content="kubernetes,api-resources," />
+  
+  <meta property="og:title" content="kubernetes-api-resources" />
+<meta property="og:description" content="List of Kubernetes API Resources" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karthikeayan.github.io/posts/kubernetes-api-resources/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-21T00:00:00+00:00" />
+
+
+  
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="kubernetes-api-resources"/>
+<meta name="twitter:description" content="List of Kubernetes API Resources"/>
+
+  
+  
+
+  
+  <link rel="canonical" href="https://karthikeayan.github.io/posts/kubernetes-api-resources/" />
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+    <a class="-translate-y-[1px] text-2xl font-medium" href="https://karthikeayan.github.io/"
+      >Karthikeyan Sundararajan</a
+    >
+    <div
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#fbfbfb'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+    >
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./twitter.svg)"
+        href="https://twitter.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        twitter
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/karthikeayan"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./instagram.svg)"
+        href="https://instagram.com/YOUR_INSTAGRAM_ID"
+        target="_blank"
+        rel="me"
+      >
+        instagram
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/karthikeyan-sundararajan/"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./mastodon.svg)"
+        href="YOUR_MASTODON_LINK"
+        target="_blank"
+        rel="me"
+      >
+        mastodon
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./threads.svg)"
+        href="https://threads.net/@YOUR_THREADS_ID"
+        target="_blank"
+        rel="me"
+      >
+        threads
+      </a>
+      
+      <a
+        class="h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="https://karthikeayan.github.io/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-14">
+    <h1 class="!my-0 pb-2.5">kubernetes-api-resources</h1>
+
+    
+    <div class="text-xs antialiased opacity-60">
+      
+      <time>Jul 21, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="list-of-kubernetes-api-resources">List of Kubernetes API Resources</h1>
+<p>Kubernetes Version: 1.25
+Cloud Provider: AWS EKS</p>
+<pre tabindex="0"><code>| NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND                             VERBS                                                        |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| apiservices                                    apiregistration.k8s.io/v1              false        APIService                       [create delete deletecollection get list patch update watch] |
+| bindings                                       v1                                     true         Binding                          [create]                                                     |
+| certificatesigningrequests        csr          certificates.k8s.io/v1                 false        CertificateSigningRequest        [create delete deletecollection get list patch update watch] |
+| clusterrolebindings                            rbac.authorization.k8s.io/v1           false        ClusterRoleBinding               [create delete deletecollection get list patch update watch] |
+| clusterroles                                   rbac.authorization.k8s.io/v1           false        ClusterRole                      [create delete deletecollection get list patch update watch] |
+| componentstatuses                 cs           v1                                     false        ComponentStatus                  [get list]                                                   |
+| configmaps                        cm           v1                                     true         ConfigMap                        [create delete deletecollection get list patch update watch] |
+| controllerrevisions                            apps/v1                                true         ControllerRevision               [create delete deletecollection get list patch update watch] |
+| cronjobs                          cj           batch/v1                               true         CronJob                          [create delete deletecollection get list patch update watch] |
+| csidrivers                                     storage.k8s.io/v1                      false        CSIDriver                        [create delete deletecollection get list patch update watch] |
+| csinodes                                       storage.k8s.io/v1                      false        CSINode                          [create delete deletecollection get list patch update watch] |
+| csistoragecapacities                           storage.k8s.io/v1                      true         CSIStorageCapacity               [create delete deletecollection get list patch update watch] |
+| customresourcedefinitions         crd,crds     apiextensions.k8s.io/v1                false        CustomResourceDefinition         [create delete deletecollection get list patch update watch] |
+| daemonsets                        ds           apps/v1                                true         DaemonSet                        [create delete deletecollection get list patch update watch] |
+| deployments                       deploy       apps/v1                                true         Deployment                       [create delete deletecollection get list patch update watch] |
+| endpoints                         ep           v1                                     true         Endpoints                        [create delete deletecollection get list patch update watch] |
+| endpointslices                                 discovery.k8s.io/v1                    true         EndpointSlice                    [create delete deletecollection get list patch update watch] |
+| eniconfigs                                     crd.k8s.amazonaws.com/v1alpha1         false        ENIConfig                        [delete deletecollection get list patch create update watch] |
+| events                            ev           v1                                     true         Event                            [create delete deletecollection get list patch update watch] |
+| events                            ev           events.k8s.io/v1                       true         Event                            [create delete deletecollection get list patch update watch] |
+| flowschemas                                    flowcontrol.apiserver.k8s.io/v1beta3   false        FlowSchema                       [create delete deletecollection get list patch update watch] |
+| horizontalpodautoscalers          hpa          autoscaling/v2                         true         HorizontalPodAutoscaler          [create delete deletecollection get list patch update watch] |
+| ingressclasses                                 networking.k8s.io/v1                   false        IngressClass                     [create delete deletecollection get list patch update watch] |
+| ingresses                         ing          networking.k8s.io/v1                   true         Ingress                          [create delete deletecollection get list patch update watch] |
+| jobs                                           batch/v1                               true         Job                              [create delete deletecollection get list patch update watch] |
+| leases                                         coordination.k8s.io/v1                 true         Lease                            [create delete deletecollection get list patch update watch] |
+| limitranges                       limits       v1                                     true         LimitRange                       [create delete deletecollection get list patch update watch] |
+| localsubjectaccessreviews                      authorization.k8s.io/v1                true         LocalSubjectAccessReview         [create]                                                     |
+| mutatingwebhookconfigurations                  admissionregistration.k8s.io/v1        false        MutatingWebhookConfiguration     [create delete deletecollection get list patch update watch] |
+| namespaces                        ns           v1                                     false        Namespace                        [create delete get list patch update watch]                  |
+| networkpolicies                   netpol       networking.k8s.io/v1                   true         NetworkPolicy                    [create delete deletecollection get list patch update watch] |
+| nodes                             no           v1                                     false        Node                             [create delete deletecollection get list patch update watch] |
+| persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim            [create delete deletecollection get list patch update watch] |
+| persistentvolumes                 pv           v1                                     false        PersistentVolume                 [create delete deletecollection get list patch update watch] |
+| poddisruptionbudgets              pdb          policy/v1                              true         PodDisruptionBudget              [create delete deletecollection get list patch update watch] |
+| pods                              po           v1                                     true         Pod                              [create delete deletecollection get list patch update watch] |
+| podtemplates                                   v1                                     true         PodTemplate                      [create delete deletecollection get list patch update watch] |
+| priorityclasses                   pc           scheduling.k8s.io/v1                   false        PriorityClass                    [create delete deletecollection get list patch update watch] |
+| prioritylevelconfigurations                    flowcontrol.apiserver.k8s.io/v1beta3   false        PriorityLevelConfiguration       [create delete deletecollection get list patch update watch] |
+| replicasets                       rs           apps/v1                                true         ReplicaSet                       [create delete deletecollection get list patch update watch] |
+| replicationcontrollers            rc           v1                                     true         ReplicationController            [create delete deletecollection get list patch update watch] |
+| resourcequotas                    quota        v1                                     true         ResourceQuota                    [create delete deletecollection get list patch update watch] |
+| rolebindings                                   rbac.authorization.k8s.io/v1           true         RoleBinding                      [create delete deletecollection get list patch update watch] |
+| roles                                          rbac.authorization.k8s.io/v1           true         Role                             [create delete deletecollection get list patch update watch] |
+| runtimeclasses                                 node.k8s.io/v1                         false        RuntimeClass                     [create delete deletecollection get list patch update watch] |
+| secrets                                        v1                                     true         Secret                           [create delete deletecollection get list patch update watch] |
+| securitygrouppolicies             sgp          vpcresources.k8s.aws/v1beta1           true         SecurityGroupPolicy              [delete deletecollection get list patch create update watch] |
+| selfsubjectaccessreviews                       authorization.k8s.io/v1                false        SelfSubjectAccessReview          [create]                                                     |
+| selfsubjectrulesreviews                        authorization.k8s.io/v1                false        SelfSubjectRulesReview           [create]                                                     |
+| serviceaccounts                   sa           v1                                     true         ServiceAccount                   [create delete deletecollection get list patch update watch] |
+| services                          svc          v1                                     true         Service                          [create delete deletecollection get list patch update watch] |
+| statefulsets                      sts          apps/v1                                true         StatefulSet                      [create delete deletecollection get list patch update watch] |
+| storageclasses                    sc           storage.k8s.io/v1                      false        StorageClass                     [create delete deletecollection get list patch update watch] |
+| subjectaccessreviews                           authorization.k8s.io/v1                false        SubjectAccessReview              [create]                                                     |
+| tokenreviews                                   authentication.k8s.io/v1               false        TokenReview                      [create]                                                     |
+| validatingwebhookconfigurations                admissionregistration.k8s.io/v1        false        ValidatingWebhookConfiguration   [create delete deletecollection get list patch update watch] |
+| volumeattachments                              storage.k8s.io/v1                      false        VolumeAttachment                 [create delete deletecollection get list patch update watch] |
+</code></pre></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/kubernetes"
+      >kubernetes</a
+    >
+     
+    <a
+      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      href="https://karthikeayan.github.io/tags/api-resources"
+      >api-resources</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+
+  
+
+
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase tracking-wider opacity-60"
+>
+  <div class="mr-auto">
+  
+    &copy; 2025
+    <a class="link" href="https://karthikeayan.github.io/">Karthikeyan Sundararajan</a>
+  
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+
+  </body>
+</html>
