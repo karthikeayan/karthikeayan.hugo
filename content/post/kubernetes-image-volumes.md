@@ -4,7 +4,6 @@ description: Kuberetes Image Volumes Feature in 1.33 (beta)
 tags: ["kubernetes", "image", "volumes", "1.33", "dynamic"]
 date: 2025-07-28
 publishdate: 2025-07-28
-
 ---
 
 # Kuberetes Image Volumes Feature in 1.33 (beta)
